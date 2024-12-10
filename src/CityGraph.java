@@ -54,9 +54,11 @@ public class CityGraph {
     public static class Node {
         String name;
         int distance;
+        int fScore;
         public Node(String name, int distance) {
             this.name = name;
             this.distance = distance;
+            this.fScore = 0;
         }
 
         @Override
