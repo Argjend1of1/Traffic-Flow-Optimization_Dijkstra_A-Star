@@ -58,7 +58,14 @@ public class CityGraph {
         public Node(String name, int distance) {
             this.name = name;
             this.distance = distance;
-            this.fScore = 0;
+            this.fScore = 0; //default fScore.
+        }
+
+//      Constructor for A* (distance + fScore)
+        public Node(String name, int distance, int fScore) {
+            this.name = name;
+            this.distance = distance;
+            this.fScore = fScore;
         }
 
         @Override
@@ -67,26 +74,35 @@ public class CityGraph {
         }
     }
 
-    // Main për testim
     public static void main(String[] args) {
         CityGraph city = new CityGraph();
 
-        // Shtimi i nyjeve dhe skajeve
         city.addRoad("A", "B", 3);
         city.addRoad("A", "C", 2);
         city.addRoad("B", "C", 4);
         city.addRoad("C", "D", 8);
         city.addRoad("B", "D", 6);
 
-        // Shfaqja e grafit
         System.out.println("Grafi:");
         city.displayGraph();
 
-        dijkstra dijkstraAlgorithm = new dijkstra(city);
+//        dijkstra dijkstraAlgorithm = new dijkstra(city);
+//
+//        System.out.println("\nRruga më e shkurtër nga A në D:");
+//        List<String> path = dijkstraAlgorithm.findShortestPath("A", "D");
+//        System.out.println(path);
 
-        // Gjetja e rrugës më të shkurtër
-        System.out.println("\nRruga më e shkurtër nga A në D:");
-        List<String> path = dijkstraAlgorithm.findShortestPath("A", "D");
-        System.out.println(path);
+
+//      Straight line distance from certain node to end
+        Map<String, Integer> heuristic = new HashMap<>();
+        heuristic.put("A", 7); //
+        heuristic.put("B", 6);
+        heuristic.put("C", 2);
+        heuristic.put("D", 0);
+
+        a_star aStarAlgorithm = new a_star();
+        System.out.println("\nRruga me e shkurter nga A ne D: ");
+        List<String> pathAStar = aStarAlgorithm.findPathAStar("A", "D", heuristic, city);
+        System.out.println(pathAStar);
     }
 }

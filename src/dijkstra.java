@@ -8,7 +8,7 @@ public class dijkstra {
         this.cityGraph = cityGraph;
     }
 
-//  Applying Djikstra's Algorithm
+//  Applying Dijkstra's Algorithm
     public List<String> findShortestPath(String start, String end) {
 //      Saving the minimal distance from root/start.
         Map<String, Integer> distances = new HashMap<>();
