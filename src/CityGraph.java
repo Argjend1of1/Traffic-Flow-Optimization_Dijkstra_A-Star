@@ -2,7 +2,7 @@ import java.util.Map;
 import java.util.*;
 
 public class CityGraph {
-    private Map<String, List<Edge>> graph;
+    private Map<String, Map<String, Double>> adjList = new HashMap<>();
     public CityGraph() {
         graph = new HashMap<>();
     }
@@ -33,6 +33,12 @@ public class CityGraph {
                 System.out.print("(" + edge.to + ", " + edge.weight + ") ");
             }
             System.out.println();
+        }
+    }
+    public void updateTraffic(String from, String to, double newWeight) {
+        if (adjList.containsKey(from) && adjList.get(from).containsKey(to)) {
+            adjList.get(from).put(to, newWeight);
+            adjList.get(to).put(from, newWeight);
         }
     }
 
