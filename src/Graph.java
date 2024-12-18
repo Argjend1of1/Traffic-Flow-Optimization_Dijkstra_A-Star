@@ -1,9 +1,9 @@
 import java.util.Map;
 import java.util.*;
 
-public class CityGraph {
+public class Graph {
     private Map<String, Map<String, Double>> adjList = new HashMap<>();
-    public CityGraph() {
+    public Graph() {
         graph = new HashMap<>();
     }
 
@@ -81,7 +81,7 @@ public class CityGraph {
     }
 
     public static void main(String[] args) {
-        CityGraph city = new CityGraph();
+        Graph city = new Graph();
 
         city.addRoad("A", "B", 3);
         city.addRoad("A", "C", 2);
