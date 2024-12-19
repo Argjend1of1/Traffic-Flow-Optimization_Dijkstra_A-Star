@@ -48,3 +48,18 @@ public class Main {
                 System.out.println("Invalid nodes. Please enter valid start and end nodes.");
                 continue;
             }
+            // Dijkstra's algorithm
+            long startTime=System.nanoTime();
+            Map<String, Object> dijkstraResult = Pathfinding.findShortestPath(graph, startNode, endNode, null);
+            long endTime = System.nanoTime();
+
+            System.out.println("\nDijkstra Execution Time: " + (endTime - startTime) + " ns");
+            System.out.println("Visited Nodes: " + dijkstraResult.get("visited"));
+            System.out.println("Path: " + dijkstraResult.get("path") + ", Cost: " + dijkstraResult.get("cost"));
+
+            // A* algorithm with Euclidean heuristic
+            Map<String, Double> heuristics = new HashMap<>();
+            for (String node : graph.getNodes()) {
+                double heuristic = Pathfinding.calculateHeuristic(node, endNode, coordinates);
+                heuristics.put(node, heuristic);
+            }
