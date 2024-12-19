@@ -14,6 +14,6 @@ public class TrafficSimulator {
                 }
                 System.out.println("Traffic updated.");
             }
-        }, 0, 50000);
+        }, 0, 8000);// 8 seconds
     }
 }
