@@ -11,6 +11,8 @@ public class TrafficSimulator {
                         double currentWeight = graph.getNeighbors(node).get(entry.getKey());
                         double newWeight = currentWeight + rand.nextDouble();
                         graph.updateTraffic(node, entry.getKey(), newWeight);
+//                        double newWeight = 1 + rand.nextDouble() * 10;
+//                        graph.updateTraffic(node, entry.getKey(), newWeight);
                     }
                 }
                 System.out.println("Traffic updated.");

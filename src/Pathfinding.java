@@ -52,7 +52,7 @@ public class Pathfinding {
         return null;
     }
 
-    private static Map<String, Object> reconstructPath(Map<String, String> cameFrom, String end, double totalCost) {
+    private static Map<String, Object> reconstructPath(Map<String, String> cameFrom, String end, double totalCost /*,List<String> visitedNodes */) {
         List<String> path = new LinkedList<>();
         String current = end;
 

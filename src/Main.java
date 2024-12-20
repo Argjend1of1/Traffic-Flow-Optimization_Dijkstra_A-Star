@@ -54,6 +54,7 @@ public class Main {
             long endTime = System.nanoTime();
 
             System.out.println("\nDijkstra Execution Time: " + (endTime - startTime) + " ns");
+//            System.out.println("Visited Nodes: " + dijkstraResult.get("visited"));
             System.out.println("Path: " + dijkstraResult.get("path") + ", Cost: " + dijkstraResult.get("cost"));
 
             // A* algorithm with Euclidean heuristic
@@ -68,6 +69,7 @@ public class Main {
             endTime = System.nanoTime();
 
             System.out.println("\nA* Execution Time: " + (endTime - startTime) + " ns");
+//            System.out.println("Visited Nodes: " + aStarResult.get("visited"));
             System.out.println("Path: " + aStarResult.get("path") + ", Cost: " + aStarResult.get("cost"));
         }
 
