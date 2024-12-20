@@ -51,3 +51,39 @@ Ky projekt përdor algoritmet **Dijkstra** dhe **A\*** për të optimizuar qarku
    - Simulon ndryshimet dinamike të trafikut në graf.
 4. `Main`
    - Është pika hyrëse e programit që lidh të gjitha pjesët dhe ofron ndërfaqe përdoruesi.
+---
+### **Shembull i Ekzekutimit**
+
+**1. Grafin Inicial**  
+Ky grafik përmban nyje dhe lidhje me peshat përkatëse si më poshtë:  
+
+```java
+// Shton nyje në graf.
+graph.addNode("A");
+graph.addNode("B");
+graph.addNode("C");
+graph.addNode("D");
+graph.addNode("E");
+graph.addNode("F");
+
+// Shton lidhje (edge) midis nyjeve me peshat përkatëse.
+graph.addEdge("A", "B", 10);
+graph.addEdge("B", "C", 15);
+graph.addEdge("C", "D", 20);
+graph.addEdge("D", "E", 25);
+graph.addEdge("E", "F", 30);
+graph.addEdge("A", "D", 40);
+graph.addEdge("B", "E", 35);
+```
+## **Rezultati fillestar pa përditësim trafiku:**
+![image](https://github.com/user-attachments/assets/9418ddc3-12cd-461e-ab13-f54edc72632d)
+
+## **Rezultati pas një përditësimi të trafikut pas 20 sekondave:**
+![image](https://github.com/user-attachments/assets/81dfd584-f37b-4163-9781-5ce38fcb11a5)
+---
+## **Kontribuesit në këtë projekt:** 
+- Argjend Nimanaj
+- Alfred Paloku
+- Brikenda Zogaj
+- Gresa Halili
+- Syzana Kryeziu
