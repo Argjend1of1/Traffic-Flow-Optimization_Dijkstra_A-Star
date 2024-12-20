@@ -49,12 +49,11 @@ public class Main {
                 continue;
             }
             // Dijkstra's algorithm
-            long startTime=System.nanoTime();
+            long startTime = System.nanoTime();
             Map<String, Object> dijkstraResult = Pathfinding.findShortestPath(graph, startNode, endNode, null);
             long endTime = System.nanoTime();
 
             System.out.println("\nDijkstra Execution Time: " + (endTime - startTime) + " ns");
-            System.out.println("Visited Nodes: " + dijkstraResult.get("visited"));
             System.out.println("Path: " + dijkstraResult.get("path") + ", Cost: " + dijkstraResult.get("cost"));
 
             // A* algorithm with Euclidean heuristic
@@ -63,3 +62,15 @@ public class Main {
                 double heuristic = Pathfinding.calculateHeuristic(node, endNode, coordinates);
                 heuristics.put(node, heuristic);
             }
+
+            startTime = System.nanoTime();
+            Map<String, Object> aStarResult = Pathfinding.findShortestPath(graph, startNode, endNode, heuristics);
+            endTime = System.nanoTime();
+
+            System.out.println("\nA* Execution Time: " + (endTime - startTime) + " ns");
+            System.out.println("Path: " + aStarResult.get("path") + ", Cost: " + aStarResult.get("cost"));
+        }
+
+        scanner.close();
+    }
+}
